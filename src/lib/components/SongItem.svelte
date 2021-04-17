@@ -1,15 +1,27 @@
-<div class="container">
+<script>
+  import { fade } from "svelte/transition";
+
+  export let title;
+  export let artist;
+</script>
+
+<div transition:fade={{ duration: 300 }} class="container">
   <div class="song-info">
-    <strong>ZAYN</strong><strong>-</strong>
-    <div class="song">Outside</div>
+    <strong>{artist} -</strong>
+    <div class="song">{title}</div>
   </div>
-  <div class="lyrics">Get Lyrics</div>
+  <div class="lyrics">
+    <a
+      style="text-decoration: none; color: white;"
+      href={"/" + artist + "/" + title}>Get Lyrics</a
+    >
+  </div>
 </div>
 
 <style>
   .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background: #8d3daf;
     align-items: center;
     border-radius: 12px;

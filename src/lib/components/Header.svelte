@@ -1,11 +1,25 @@
+<script>
+  import { songs } from "$lib/stores/songs";
+  let songName;
+  async function getSongs() {
+    let res = await fetch(`https://api.lyrics.ovh/suggest/${songName}`);
+    if (res.ok) {
+      let data = await res.json();
+      $songs = data.data;
+    }
+    songName = "";
+  }
+</script>
+
 <div class="head-container">
-  <form>
+  <form on:submit|preventDefault={getSongs}>
     <!-- svelte-ignore a11y-autofocus -->
     <input
       class="input"
       type="text"
       placeholder="Search Artist, Song, Album"
       autofocus
+      bind:value={songName}
     />
     <input class="submit" type="submit" value="Search" />
   </form>

@@ -1,6 +1,7 @@
 <script>
   import Header from "$lib/components/Header.svelte";
   import SongItem from "$lib/components/SongItem.svelte";
+  import { songs } from "$lib/stores/songs";
 </script>
 
 <div>
@@ -8,11 +9,9 @@
     <Header />
   </div>
   <div class="song-item">
-    <SongItem />
-    <SongItem />
-    <SongItem />
-    <SongItem />
-    <SongItem />
+    {#each $songs as item}
+      <SongItem title={item.title} artist={item.artist.name} />
+    {/each}
   </div>
 </div>
 

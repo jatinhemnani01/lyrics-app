@@ -5,7 +5,7 @@
   export let artist;
 </script>
 
-<div transition:fade={{ duration: 300 }} class="container">
+<div in:fade={{ duration: 300 }} class="container">
   <div class="song-info">
     <strong>{artist} -</strong>
     <div class="song">{title}</div>

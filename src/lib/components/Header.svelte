@@ -1,5 +1,6 @@
 <script>
   import { songs } from "$lib/stores/songs";
+
   let songName;
   async function getSongs() {
     let res = await fetch(`https://api.lyrics.ovh/suggest/${songName}`);

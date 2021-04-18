@@ -5,6 +5,9 @@
   import Animate from "$lib/components/Animate.svelte";
 </script>
 
+<svelte:head>
+  <title>Lyrics App</title>
+</svelte:head>
 <Animate>
   <div>
     <div>

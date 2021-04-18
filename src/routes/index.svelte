@@ -2,19 +2,21 @@
   import Header from "$lib/components/Header.svelte";
   import SongItem from "$lib/components/SongItem.svelte";
   import { songs } from "$lib/stores/songs";
-  import Error from "$lib/components/Error.svelte";
+  import Animate from "$lib/components/Animate.svelte";
 </script>
 
-<div>
+<Animate>
   <div>
-    <Header />
+    <div>
+      <Header />
+    </div>
+    <div class="song-item">
+      {#each $songs as item}
+        <SongItem title={item.title} artist={item.artist.name} />
+      {/each}
+    </div>
   </div>
-  <div class="song-item">
-    {#each $songs as item}
-      <SongItem title={item.title} artist={item.artist.name} />
-    {/each}
-  </div>
-</div>
+</Animate>
 
 <style>
   .song-item {

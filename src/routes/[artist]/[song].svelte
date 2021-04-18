@@ -2,7 +2,8 @@
   import { onMount } from "svelte";
   import { page } from "$app/stores";
   import Error from "$lib/components/Error.svelte";
-  import { lyricsLoading } from "$lib/stores/loading";
+  import { lyricsLoading } from "$lib/stores/lyricsLoading";
+  import Loading from "$lib/components/Loading.svelte";
 
   let { artist } = $page.params;
   const { song } = $page.params;
@@ -41,7 +42,7 @@
   <Error />
 {/if}
 {#if $lyricsLoading}
-  <h1>Loading...</h1>
+  <Loading />
 {/if}
 
 <style>

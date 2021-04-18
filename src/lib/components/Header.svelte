@@ -1,14 +1,17 @@
 <script>
   import { songs } from "$lib/stores/songs";
+  import { loading } from "$lib/stores/loading";
+  import Loading from "./Loading.svelte";
 
   let songName;
   async function getSongs() {
+    $loading = true;
     let res = await fetch(`https://api.lyrics.ovh/suggest/${songName}`);
     if (res.ok) {
       let data = await res.json();
       $songs = data.data;
+      $loading = false;
     }
-    songName = "";
   }
 </script>
 
@@ -24,6 +27,9 @@
     />
     <input class="submit" type="submit" value="Search" />
   </form>
+  {#if $loading}
+    <Loading />
+  {/if}
 </div>
 
 <style>

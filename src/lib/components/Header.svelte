@@ -30,11 +30,26 @@
   {#if $loading}
     <Loading />
   {/if}
+
+  {#if $songs === null || $songs.length === 0}
+    <h1
+      style="text-align: center; margin-top: 20px;display: flex; align-items: center; justify-content: center; height: 100%;"
+    >
+      Songs Will Appear Here
+    </h1>
+  {/if}
 </div>
 
 <style>
   .head-container {
-    background: #e21717;
+    background-color: #d04143;
+    background-image: linear-gradient(
+      43deg,
+      #d04143 0%,
+      #c85066 46%,
+      #ff4750 100%
+    );
+
     height: 40vh;
   }
   form {

@@ -18,9 +18,6 @@
         <SongItem title={item.title} artist={item.artist.name} />
       {/each}
     </div>
-    {#if $songs === null || $songs.length === 0}
-      <h1 style="text-align: center;">Songs Will Appear Here</h1>
-    {/if}
   </div>
 </Animate>
 

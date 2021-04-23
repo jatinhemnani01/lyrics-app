@@ -1,3 +1,7 @@
+<script context="module">
+  export const prerender = true;
+</script>
+
 <script>
   import Header from "$lib/components/Header.svelte";
   import SongItem from "$lib/components/SongItem.svelte";

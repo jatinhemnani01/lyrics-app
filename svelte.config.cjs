@@ -1,4 +1,4 @@
-const node = require("@sveltejs/adapter-static");
+const node = require("@sveltejs/adapter-vercel");
 const pkg = require("./package.json");
 
 /** @type {import('@sveltejs/kit').Config} */

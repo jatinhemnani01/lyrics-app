@@ -1,4 +1,4 @@
-# [Live Demo](https://lyrics-app-sveltekit.netlify.app/)
+# [Live Demo](https://lyrics-app-tan.vercel.app/)
 
 # create-svelte
 
